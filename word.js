@@ -4,7 +4,19 @@ mongoose.connect(
     {useNewUrlParser: true, useUnifiedTopology: true}
 );
 
-const Cat = mongoose.model('Cat', { name: String });
+const Word = mongoose.model('Word', { 
+    en: {type : String , trim : true , unique : true , require : true , uppercase : true},
+    vn: {type : String , trim : true  , require : true , uppercase : true},
+    isMemorized: {type : Boolean , default : false},
+});
 
-const kitty = new Cat({ name: 'Zildjian' });
-kitty.save().then(() => console.log('meow'));
+//SELECT
+// Word.find({})
+// .then(words => console.log(words))
+// .catch(error => console.log(error))
+
+//INSERT
+const word = new Word({en : 'One', vn : 'Mot'})
+word.save()
+.then(word => console.log(word))
+.catch(error => console.log(error))

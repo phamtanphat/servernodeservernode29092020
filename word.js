@@ -9,6 +9,7 @@ const Word = mongoose.model('Word', {
     vn: {type : String , trim : true  , require : true , uppercase : true},
     isMemorized: {type : Boolean , default : false},
 });
+module.exports = {Word}
 
 //SELECT
 // Word.find({})
@@ -27,7 +28,7 @@ const Word = mongoose.model('Word', {
 // .catch(error => console.log(error))
 
 //DELETE
-Word.findByIdAndRemove('5faa879247cc8e0eea4f3c34')
-.then(word => console.log(word))
-.catch(error => console.log(error))
+// Word.findByIdAndRemove('5faa879247cc8e0eea4f3c34')
+// .then(word => console.log(word))
+// .catch(error => console.log(error))
 

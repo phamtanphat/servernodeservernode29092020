@@ -16,7 +16,18 @@ const Word = mongoose.model('Word', {
 // .catch(error => console.log(error))
 
 //INSERT
-const word = new Word({en : 'One', vn : 'Mot'})
-word.save()
+// const word = new Word({en : 'One', vn : 'Mot'})
+// word.save()
+// .then(word => console.log(word))
+// .catch(error => console.log(error))
+
+// UPDATE
+// Word.findByIdAndUpdate('5faa879247cc8e0eea4f3c34',{isMemorized : true} , {new : true})
+// .then(word => console.log(word))
+// .catch(error => console.log(error))
+
+//DELETE
+Word.findByIdAndRemove('5faa879247cc8e0eea4f3c34')
 .then(word => console.log(word))
 .catch(error => console.log(error))
+
